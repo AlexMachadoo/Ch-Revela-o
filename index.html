@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chaRevelacao - Contagem Regressiva</title>
+    <!-- Carregando a fonte "Dancing Script" do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Gradiente de fundo com várias cores */
+        body {
+            background: linear-gradient(to right, 
+                rgb(0, 174, 255), /* Azul claro */
+                rgb(46, 151, 221), /* Azul escuro */
+                rgb(233, 77, 233), /* Roxo */
+                rgb(255, 3, 158)  /* Rosa */
+            );
+            color: white;
+            font-family: 'Dancing Script', cursive; /* Aplica a fonte Dancing Script */
+        }
+
+        /* Estilo para a imagem do bebê */
+        .img-bebe {
+            max-width: 200px;
+            border-radius: 10px;
+            border: 1px solid #fff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombramento da imagem */
+            transition: all 0.3s ease; /* Efeito suave ao passar o mouse */
+            margin-right: 20px;
+        }
+
+        .img-bebe:hover {
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Sombramento mais forte ao passar o mouse */
+            transform: translateY(-5px); /* Levanta a imagem */
+        }
+
+        /* Container do texto delicado ao lado da imagem */
+        .container-texto {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            border: 3px solid #fff; /* Borda estilizada */
+            border-radius: 12px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+        }
+
+        /* Estilo para o título e texto */
+        .container-texto h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff007f; /* Cor do título */
+        }
+
+        .container-texto p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        /* Estilo do carrossel */
+        .carousel-inner {
+            width: 60%;  /* Ajusta a largura do carrossel */
+            height: 750px; /* Ajusta a altura do carrossel */
+            border: 1px solid #fff;
+            margin: 0 auto; /* Centraliza o carrossel */
+            overflow: hidden;
+            border-radius: 15px; /* Bordas arredondadas */
+        }
+
+        .carousel-item img {
+            width: 100%;  /* Faz com que as imagens ocupem a largura do carrossel */
+            height: 100%; /* Faz com que as imagens ocupem a altura do carrossel */
+            object-fit: cover; /* Garante que as imagens preencham o espaço sem distorcer */
+            border-radius: 10px; /* Bordas arredondadas nas imagens */
+        }
+
+        /* Ajuste do estilo do botão do carrossel */
+        .carousel-control-prev, .carousel-control-next {
+            top: 50%; /* Posiciona os botões no meio da altura */
+            transform: translateY(-50%); /* Alinha os botões ao centro */
+        }
+
+        /* Estilo para o risco de divisão */
+        .divider {
+            border-top: 1px solid white;
+            margin: 40px 0;
+        }
+
+        /* Estilo para o botão de cartinha */
+        .btn-cartinha {
+            background-color: #ff8b8b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-cartinha:hover {
+            background-color: #ff3b3b;
+        }
+
+        /* Estilo para a cartinha oculta */
+        .cartinha {
+            display: none;
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centraliza a cartinha */
+            max-width: 80%;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1>Oi Papai, Oi Mamãe!</h1>
+        <p>Estou muito próximo de revelar meu sexo... em breve saberão!</p>
+        <h2>Contagem regressiva para o grande dia:</h2>
+        <div id="countdown" class="display-4"></div>
+        <hr>
+
+        <div class="container-texto">
+            <!-- Imagem do bebê com sombra e efeito de flutuação -->
+            <img src="imagem/bebe.jpg" alt="Imagem do bebê" class="img-fluid img-bebe">
+            <div>
+                <h2>Oi Papai, Oi Mamãe!</h2>
+                <p>Eu sei que vocês estão muito ansiosos para saber qual será o meu sexo, mas podem ficar tranquilos! Os titios vão cuidar de tudo com muito carinho e, no momento certo, vocês irão saber. Eu mal posso esperar para compartilhar essa felicidade com vocês. Sei que esse é um momento único e cheio de emoções para todos, e estou aqui para proporcionar ainda mais alegria em suas vidas. Contagem regressiva para o grande dia!</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="margin-top: 30px;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagem/papais0.jpeg" class="d-block w-100" alt="Imagem 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagem/papais1.jpeg" class="d-block w-100" alt="Imagem 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagem/papais2.jpeg" class="d-block w-100" alt="Imagem 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagem/papais3.jpeg" class="d-block w-100" alt="Imagem 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagem/papais4.jpeg" class="d-block w-100" alt="Imagem 5">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Risco de divisão -->
+        <div class="divider"></div>
+
+        <!-- Botão de cartinha -->
+        <button class="btn-cartinha" onclick="toggleCartinha()">Abrir Cartinha</button>
+
+        <!-- Cartinha escondida -->
+        <div id="cartinha" class="cartinha">
+            <h3>Gostaria de deixar uma lembrancinha para vocês desse momento tão especial, espero que gostem. É simples, mas é de coração. <br>Ass: Jaque e Alex</h3>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função para mostrar/ocultar a cartinha
+        function toggleCartinha() {
+            var cartinha = document.getElementById("cartinha");
+            if (cartinha.style.display === "none" || cartinha.style.display === "") {
+                cartinha.style.display = "block";
+            } else {
+                cartinha.style.display = "none";
+            }
+        }
+
+        // Contagem regressiva
+        const countdownDate = new Date("Dec 1, 2024 00:00:00").getTime();
+        const countdownElement = document.getElementById("countdown");
+
+        const updateCountdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                countdownElement.innerHTML = "É o grande dia!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
